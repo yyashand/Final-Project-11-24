@@ -3,22 +3,22 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "Build Game (g++)",
-            "command": "/usr/bin/g++", // Path g++ di lingkungan Codespaces (biasanya ini)
+            "label": "Build Game Project (g++)",
+            "command": "g++.exe", // Atau path lengkap ke g++.exe Anda, misalnya "C:\\msys64\\ucrt64\\bin\\g++.exe"
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                // Daftar semua file .cpp Anda di sini:
+                // PASTIKAN SEMUA FILE .CPP ANDA TERDAFTAR DI SINI:
                 "${workspaceFolder}/GameDataTypes.cpp",
                 "${workspaceFolder}/Subject.cpp",
                 "${workspaceFolder}/ConfigurableEnemyFactory.cpp",
                 "${workspaceFolder}/ChoiceLoggerObserver.cpp",
-                "${workspaceFolder}/NavigateCommand.cpp",
-                "${workspaceFolder}/GameEngine.cpp",
+                "${workspaceFolder}/MapsCommand.cpp",
+                "${workspaceFolder}/GameEngine.cpp",   // <--- PASTIKAN INI ADA!
                 "${workspaceFolder}/main.cpp",
                 // Tambahkan file .cpp lain jika ada
                 "-o",
-                "${workspaceFolder}/Game", // Nama output executable (tanpa .exe untuk Linux)
+                "${workspaceFolder}/main.exe", // Atau nama output yang Anda inginkan
                 "-std=c++17"
             ],
             "options": {
@@ -31,7 +31,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Compiles all .cpp files in the project folder using g++."
+            "detail": "Compiles the C++ game project using g++."
         }
     ]
 }

@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build Game Project (g++)", // Anda bisa ganti label ini jika mau
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe", // Path ini sudah benar jika itu lokasi g++.exe Anda
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",                         // Untuk informasi debug
+                // Daftarkan SEMUA file .cpp Anda di sini:
+                "${workspaceFolder}\\GameDataTypes.cpp",
+                "${workspaceFolder}\\Subject.cpp",
+                "${workspaceFolder}\\ConfigurableEnemyFactory.cpp",
+                "${workspaceFolder}\\ChoiceLoggerObserver.cpp",
+                "${workspaceFolder}\\MapsCommand.cpp",
+                "${workspaceFolder}\\GameEngine.cpp",
+                "${workspaceFolder}\\main.cpp",
+                // Tambahkan file .cpp lain jika Anda membuatnya
+                "-o", // Opsi untuk menentukan nama file output
+                "${workspaceFolder}\\Game.exe", // Nama file executable output (misal: Game.exe)
+                "-std=c++17"                  // Menggunakan standar C++17
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}" // Ubah cwd ke direktori utama proyek Anda
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles the C++ game project using g++." // Detail bisa diubah
+        }
+    ]
+}
