@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build Game (g++)",
+            "command": "/usr/bin/g++", // Path g++ di lingkungan Codespaces (biasanya ini)
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                // Daftar semua file .cpp Anda di sini:
+                "${workspaceFolder}/GameDataTypes.cpp",
+                "${workspaceFolder}/Subject.cpp",
+                "${workspaceFolder}/ConfigurableEnemyFactory.cpp",
+                "${workspaceFolder}/ChoiceLoggerObserver.cpp",
+                "${workspaceFolder}/NavigateCommand.cpp",
+                "${workspaceFolder}/GameEngine.cpp",
+                "${workspaceFolder}/main.cpp",
+                // Tambahkan file .cpp lain jika ada
+                "-o",
+                "${workspaceFolder}/Game", // Nama output executable (tanpa .exe untuk Linux)
+                "-std=c++17"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles all .cpp files in the project folder using g++."
+        }
+    ]
+}
